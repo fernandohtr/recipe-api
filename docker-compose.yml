@@ -9,5 +9,5 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - ./app:/app
-    command: python manage.py runserver 0.0.0.0:8000
+      - .:/recipe-api
+    command: poetry run python app/manage.py runserver 0.0.0.0:8000
