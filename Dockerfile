@@ -4,14 +4,14 @@ ENV PYTHONUNBUFFERED=1
 
 RUN apk add poetry && \
     apk add --update --no-cache postgresql-client && \
-    apk add --update --no-cache --virtual .tmp-build-deps \
+    apk add --update --no-cache --virtual .build-deps \
         python3-dev \
         libpq-dev \
         build-base \
+        gcc \
         postgresql-dev \
         musl-dev && \
-    poetry config virtualenvs.in-project true && \
-    apk del .tmp-build-deps
+    poetry config virtualenvs.in-project true
 
 RUN adduser \
         --disabled-password \
