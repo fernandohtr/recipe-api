@@ -8,9 +8,11 @@ packages = [{include = "app"}]
 [tool.poetry.dependencies]
 python = "^3.9"
 django = "^3.2"
-flake8 = "^6.0.0"
 pyscopg2 = "^66.0.2"
 
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^6.0.0"
 
 [build-system]
 requires = ["poetry-core"]

@@ -43,7 +43,7 @@ bcrypt = ["bcrypt"]
 name = "flake8"
 version = "6.0.0"
 description = "the modular source code checker: pep8 pyflakes and co"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.8.1"
 files = [
@@ -60,7 +60,7 @@ pyflakes = ">=3.0.0,<3.1.0"
 name = "mccabe"
 version = "0.7.0"
 description = "McCabe checker, plugin for flake8"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 files = [
@@ -72,7 +72,7 @@ files = [
 name = "pycodestyle"
 version = "2.10.0"
 description = "Python style guide checker"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 files = [
@@ -84,7 +84,7 @@ files = [
 name = "pyflakes"
 version = "3.0.1"
 description = "passive checker of Python programs"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 files = [
@@ -147,4 +147,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "1fa5e94d4aa07ae306407ce597b14e7523a0732ea72819efa1249d26b245b450"
+content-hash = "1d4bcb432e116a82a77f255f5e2da3f8c1100696b36799b7fdeda92821ac14d1"
