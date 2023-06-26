@@ -9,6 +9,7 @@ packages = [{include = "app"}]
 python = "^3.9"
 django = "^3.2"
 flake8 = "^6.0.0"
+pyscopg2 = "^66.0.2"
 
 
 [build-system]

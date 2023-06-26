@@ -1,9 +1,17 @@
-FROM python:3.11-alpine
+FROM python:3.9-alpine
 
 ENV PYTHONUNBUFFERED=1
 
-RUN apk add poetry \
-    && poetry config virtualenvs.in-project true
+RUN apk add poetry && \
+    apk add --update --no-cache postgresql-client && \
+    apk add --update --no-cache --virtual .tmp-build-deps \
+        python3-dev \
+        libpq-dev \
+        build-base \
+        postgresql-dev \
+        musl-dev && \
+    poetry config virtualenvs.in-project true && \
+    apk del .tmp-build-deps
 
 RUN adduser \
         --disabled-password \
