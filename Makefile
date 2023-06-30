@@ -4,8 +4,11 @@ build:
 lint:
 	docker compose run --rm app poetry run flake8
 
+logs:
+	docker compose logs -f
+
 test:
-	docker compose run --rm app poetry run python app/manage.py test
+	docker compose run --rm -w /recipe-api/app app poetry run python manage.py test
 
 start:
 	docker compose up -d
