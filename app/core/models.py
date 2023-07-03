@@ -8,11 +8,21 @@ from django.contrib.auth.models import (
 
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None, **kwargs):
-        user = self.model(email=email, **kwargs)
+        user = self.model(email=self.normalize_email(email), **kwargs)
         user.set_password(password)
         user.save(using=self._db)
 
         return user
+
+    def normalize_email(self, email):
+        email = email or ''
+        try:
+            email_name, domain_part = email.strip().rsplit('@', 1)
+        except ValueError:
+            pass
+        else:
+            email = email_name.lower() + '@' + domain_part.lower()
+        return email
 
 
 class User(AbstractBaseUser, PermissionsMixin):
